@@ -96,9 +96,10 @@
         color: #f5ce31;
         content: "\2022";
         font-size: 2em;
-        padding-right: 0.5em;
+        padding-right: 30px;
         position: relative;
         top: 0.15em;
+        padding-left: 20px;
     }
 
     .list-group-item:last-child {
