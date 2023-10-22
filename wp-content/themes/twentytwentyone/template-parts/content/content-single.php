@@ -115,11 +115,11 @@
                     </div>
                 </div>
             </div>
-            <!--            <div class="row">-->
-            <!--                <div class="col-md-12">-->
-            <!--                    <div class="overviewline"></div>-->
-            <!--                </div>-->
-            <!--            </div>-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="overviewline"></div>
+                            </div>
+                        </div>
             <div class="row maincontent">
                 <div class="col-md-12">
                     <?php
