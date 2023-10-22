@@ -136,36 +136,36 @@
         margin-bottom: 5px;
         width: 100%;
     }
-    .headlines .headlinesdate {
+    .headlines .headlinesdates {
         font-size: 0.8em;
         width: 15%;
         min-width: 55px;
         display: table-cell;
         vertical-align: middle;
     }
-    .headlinesdate .headlinesdm, .news > .headlines .headlinesdate, .headlinesdate {
+    .headlinesdates .headlinesdms, .news > .headlines .headlinesdates, .headlinesdates {
         float: left;
         font-family: 'Prata', serif;
     }
-    .headlinesdate .headlinesdm, .news > .headlines .headlinesdate, .headlinesdate {
+    .headlinesdates .headlinesdms, .news > .headlines .headlinesdates, .headlinesdates {
         float: left;
         font-family: 'Prata', serif;
     }
-    .list_news .headlines .headlinesday, .detail .headlinesdate .headlinesday {
+    .list_news .headlines .headlinesdays, .detail .headlinesdates .headlinesdays {
         border-bottom: 1px solid #000;
     }
-    .headlinesdate .headlinesday {
+    .headlinesdates .headlinesday {
         border-bottom: 1px solid #fff;
     }
-    .headlinesdate .headlinesday, .news > .headlines .headlinesmonth {
+    .headlinesdates .headlinesdays, .news > .headlines .headlinesmonths {
         line-height: 1.7em;
     }
-    .headlinesdate .headlinesyear {
+    .headlinesdates .headlinesyears {
         line-height: 3.5em;
         float: left;
         margin-left: 3px;
     }
-    .headlines ul > li > .headlinestitle {
+    .headlines ul > li > .headlinestitles {
         display: table-cell;
         vertical-align: middle;
         width: 95%;
@@ -252,6 +252,47 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <?php
+            // Include WordPress bootstrap
+            require('wp-load.php');
 
+            // Truy vấn cơ sở dữ liệu để lấy thông tin bài viết
+            $query = new WP_Query(array('post_type' => 'post'));
+
+            // Kiểm tra xem có bài viết nào không
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    $post_title = get_the_title(); // Lấy tên bài viết
+                    $post_date = get_the_date(); // Lấy thời gian đăng bài viết
+                    ?>
+
+                    <div class="list_news">
+                        <div class="headlines">
+                            <ul>
+                                <li>
+                                    <div class="headlinesdates">
+                                        <div class="headlinesdms">
+                                            <div class="headlinesdays"><?php echo $post_date= get_the_date('d'); ?></div>
+                                            <div class="headlinesmonths"><?php echo $post_date= get_the_date('m'); ?></div>
+                                        </div>
+                                        <div class="headlinesyears"><?php echo $post_date= get_the_date('y'); ?></div>
+                                    </div>
+                                    <div class="headlinestitles">
+                                        <a href="<?php the_permalink(); ?>"><?php echo $post_title; ?></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <?php
+                }
+            }
+            ?>
+        </div>
+    </div>
 </body>
 </html>
