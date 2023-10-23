@@ -76,12 +76,125 @@
         line-height: 1.7em;
     }
 
+
+    .list-group {
+        list-style: disc;
+        margin-bottom: 0;
+    }
+
+    .list-group-item {
+
+        border: none !important;
+        border-bottom: 2px #d9d9d9 solid !important;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 15px;
+    }
+    .list-group-item:before {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #f5ce31;
+        content: "\2022";
+        font-size: 2em;
+        padding-right: 30px;
+        position: relative;
+        top: 0.15em;
+        padding-left: 20px;
+    }
+
+    .list-group-item:last-child {
+        border: none;
+    }
+    .list-group-item a{
+
+    }
+    .crossedbg {
+        background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_cr_grey.png);
+        height: 15px;
+        margin: 0 15px;
+
+    }
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat;
+    }
+    .list_news .headlines {
+        background: #fff;
+    }
+    .headlines {
+        background: #56bdbf;
+        overflow: hidden;
+        padding: 20px 30px;
+    }
+    .headlines ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .headlines ul > li {
+        overflow: hidden;
+        display: table;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .headlines .headlinesdates {
+        font-size: 0.8em;
+        width: 15%;
+        min-width: 55px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .headlinesdates .headlinesdms, .news > .headlines .headlinesdates, .headlinesdates {
+        float: left;
+        font-family: 'Prata', serif;
+    }
+    .headlinesdates .headlinesdms, .news > .headlines .headlinesdates, .headlinesdates {
+        float: left;
+        font-family: 'Prata', serif;
+    }
+    .list_news .headlines .headlinesdays, .detail .headlinesdates .headlinesdays {
+        border-bottom: 1px solid #000;
+    }
+    .headlinesdates .headlinesday {
+        border-bottom: 1px solid #fff;
+    }
+    .headlinesdates .headlinesdays, .news > .headlines .headlinesmonths {
+        line-height: 1.7em;
+    }
+    .headlinesdates .headlinesyears {
+        line-height: 3.5em;
+        float: left;
+        margin-left: 3px;
+    }
+    .headlines ul > li > .headlinestitles {
+        display: table-cell;
+        vertical-align: middle;
+        width: 95%;
+    }
+    .list_news .headlines a {
+        color: #000;
+
+    }
+
+
 </style>
 <body>
 
 <div class="container-fluid post-content" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="row">
-        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <ul class="list-group">
+                <h3 style="font-weight: 900; margin: 15px 15px;">Categories</h3>
+                <div class="crossedbg"></div>
+                <?php
+                $categories = get_categories();
+                foreach ($categories as $category) {
+                    $category_link = get_category_link($category->term_id);
+                    echo '<li class="list-group-item"><a href="' . esc_url($category_link) . '">' . esc_html($category->name) . '</a></li>';
+                }
+                ?>
+            </ul>
+        </div>
         <div class="col-md-6">
             <div class="row title">
                 <div class="col-md-10 col-xs-9" >
@@ -140,6 +253,47 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <?php
+            // Include WordPress bootstrap
+            require('wp-load.php');
 
+            // Truy vấn cơ sở dữ liệu để lấy thông tin bài viết
+            $query = new WP_Query(array('post_type' => 'post'));
+
+            // Kiểm tra xem có bài viết nào không
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    $post_title = get_the_title(); // Lấy tên bài viết
+                    $post_date = get_the_date(); // Lấy thời gian đăng bài viết
+                    ?>
+
+                    <div class="list_news">
+                        <div class="headlines">
+                            <ul>
+                                <li>
+                                    <div class="headlinesdates">
+                                        <div class="headlinesdms">
+                                            <div class="headlinesdays"><?php echo $post_date= get_the_date('d'); ?></div>
+                                            <div class="headlinesmonths"><?php echo $post_date= get_the_date('m'); ?></div>
+                                        </div>
+                                        <div class="headlinesyears"><?php echo $post_date= get_the_date('y'); ?></div>
+                                    </div>
+                                    <div class="headlinestitles">
+                                        <a href="<?php the_permalink(); ?>"><?php echo $post_title; ?></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <?php
+                }
+            }
+            ?>
+        </div>
+    </div>
 </body>
 </html>
