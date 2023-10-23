@@ -67,7 +67,7 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="<?php echo esc_url(get_search_link()); ?>">
                         <i class="fa fa-solid fa-magnifying-glass"></i>
                         Search
                     </a>
