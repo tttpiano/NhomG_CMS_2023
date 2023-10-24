@@ -27,6 +27,46 @@
     body {
         font-family: 'Open Sans', sans-serif;
     }
+
+    ul.list_1 {
+        list-style: none;
+        margin: 0 0 20px 0;
+        padding: 0;
+        font-weight: 700;
+        font-size: 13px;
+        margin-bottom: 0;
+        color: #2d4050;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    .wpb_wrapper hr {
+        border-color: #999eab;
+        margin: 0;
+        border-width: 2px;
+        width: 45px;
+        margin-bottom: 10px;
+    }
+
+    ul.list_1 li a {
+        text-decoration: none;
+        padding: 4px 10px;
+        display: block;
+        margin-bottom: 0;
+        border-bottom: 1px solid #efefef;
+        color: #488dc6;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        background: transparent;
+    }
+
+    .type-111 a {
+        text-decoration: none;
+    }
+
+    li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+    }
 </style
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -39,7 +79,7 @@
     </a>
 
     <?php get_template_part('template-parts/header/site-header'); ?>
-    <div class="container" style="margin-top: 30px">
+    <div class="container-fluid" style="margin-top: 30px">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -87,7 +127,61 @@
                 }
                 ?>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                <div class="vc_column-inner ">
+                    <div class="wpb_wrapper">
+                        <div class="wpb_text_column wpb_content_element ">
+                            <div class="wpb_wrapper">
+                                <?php
+                                if (is_home() || is_front_page()) { // Kiểm tra xem bạn đang ở trang chủ
+                                    if (is_user_logged_in()) {
+                                        $comments = get_comments(array(
+                                            'status' => 'approve', // Lấy các bình luận đã được duyệt
+                                            'number' => 20, // -1 để lấy tất cả bình luận, hoặc bạn có thể đặt một giới hạn
+                                        ));
+
+                                        echo '<h4>COMMENT</h4>
+                                            <hr>
+                                            <ul class="list_1">';
+
+                                        if (!empty($comments)) {
+                                            foreach ($comments as $comment) {
+                                                // Lấy ID của bài viết mà bình luận đã được đăng trên
+                                                $post_id = $comment->comment_post_ID;
+                                                // Lấy link đến bài viết
+                                                $post_link = get_permalink($post_id);
+                                                echo '<li><a href="' . esc_url($post_link) . '">' . esc_html($comment->comment_content) . '</a></li>';
+                                            }
+                                        } else {
+                                            echo '<li>Không có bình luận nào.</li>';
+                                        }
+                                        echo '</ul>';
+                                    }
+                                }
+
+                                ?>
+
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!--    // Lấy tất cả các bình luận-->
+    <!--    $comments = get_comments(array(-->
+    <!--    'status' => 'approve', // Lấy các bình luận đã được duyệt-->
+    <!--    'number' => -1, // -1 để lấy tất cả bình luận, hoặc bạn có thể đặt một giới hạn-->
+    <!--    ));-->
+    <!---->
+    <!--    if (!empty($comments)) {-->
+    <!--    foreach ($comments as $comment) {-->
+    <!--    // In ra thông tin của mỗi bình luận-->
+    <!--    echo 'Người đăng: ' . get_comment_author($comment) . '<br>';-->
+    <!--    echo 'Nội dung: ' . $comment->comment_content . '<br>';-->
+    <!--    echo 'Ngày đăng: ' . $comment->comment_date . '<br><br>';-->
+    <!--    }-->

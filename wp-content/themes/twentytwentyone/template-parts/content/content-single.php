@@ -93,7 +93,7 @@
     }
 
     .list-group-item {
-
+        margin-bottom: 0px !important;
         border: none !important;
         border-bottom: 2px #d9d9d9 solid !important;
         margin-bottom: 0;
