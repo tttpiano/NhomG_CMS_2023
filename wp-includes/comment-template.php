@@ -2579,11 +2579,36 @@ function comment_form( $args = array(), $post = null ) {
 		'comment_field'        => sprintf(
 			'<p class="comment-form-comment">%s %s</p>',
 			sprintf(
-				'<label for="comment">%s%s</label>',
-				_x( 'Comment', 'noun' ),
+				'',
+				_x( '', '' ),
 				$required_indicator
 			),
-			'<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"' . $required_attribute . '></textarea>'
+
+			' <!--- Post Form Begins -->
+                <section style="padding: 0" class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Make
+                                    a Post</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                                <div class="form-group">
+                                    <label class="sr-only" for="message">post</label>
+                                    <textarea style="border: 1px solid#dce0e4;border-radius: 5px;" class="form-control" id="comment" name="comment" rows="3" placeholder="What are you thinking..." ' . $required_attribute . '></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button style="background: #007bff; color:#FFFFFF" type="submit" id="submit" name="submit" class="btn btn-primary">share</button>
+                        </div>
+                    </div>
+                </section>
+                <!--- Post Form Ends -->'
 		),
 		'must_log_in'          => sprintf(
 			'<p class="must-log-in">%s</p>',
@@ -2595,10 +2620,10 @@ function comment_form( $args = array(), $post = null ) {
 			)
 		),
 		'logged_in_as'         => sprintf(
-			'<p class="logged-in-as">%s%s</p>',
+			'',
 			sprintf(
 				/* translators: 1: User name, 2: Edit user link, 3: Logout URL. */
-				__( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>' ),
+				__( '' ),
 				$user_identity,
 				get_edit_user_link(),
 				/** This filter is documented in wp-includes/link-template.php */
@@ -2631,10 +2656,11 @@ function comment_form( $args = array(), $post = null ) {
 		'cancel_reply_after'   => '</small>',
 		'cancel_reply_link'    => __( 'Cancel reply' ),
 		'label_submit'         => __( 'Post Comment' ),
-		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+		'submit_button'        => '',
 		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
 		'format'               => 'xhtml',
 	);
+
 
 	/**
 	 * Filters the comment form default arguments.
@@ -2667,6 +2693,8 @@ function comment_form( $args = array(), $post = null ) {
 	do_action( 'comment_form_before' );
 	?>
 	<div id="respond" class="<?php echo esc_attr( $args['class_container'] ); ?>">
+
+
 		<?php
 		echo $args['title_reply_before'];
 
@@ -2869,7 +2897,7 @@ function comment_form( $args = array(), $post = null ) {
 
 		endif;
 		?>
-	</div><!-- #respond -->
+	</div>
 	<?php
 
 	/**
