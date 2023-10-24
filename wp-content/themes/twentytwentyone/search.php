@@ -131,6 +131,47 @@ if (have_posts()) {
 
         <div class="row">
             <div class="col-md-3">
+            <div class="row justify-content-center">
+                    <h1>Trang mới nhất</h1>
+                  
+                    
+                    <div class="col-12">
+                        <!-- Tin tức thứ ba (cấu trúc tương tự tin tức đầu tiên) -->
+                        <div class="card">
+                        <?php
+        $args = array(
+            'post_type' => 'post',  // Loại bài viết là "post" (bài viết thông thường).
+            'posts_per_page' => 3,  // Số bài viết muốn hiển thị (1 bài viết mới nhất).
+            'order' => 'DESC',     // Sắp xếp theo thứ tự giảm dần (từ mới nhất đến cũ nhất).
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post();
+        ?>
+
+        <div class="col-12">
+            <div class="card">
+                <?php if (has_post_thumbnail()) : ?>
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="card-img-top" alt="...">
+                <?php endif; ?>
+                <div class="card-body">
+                    <h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                    <p class="card-text"><?php the_excerpt(); ?></p>
+                    <a href="<?php the_permalink(); ?>" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
                 <?php
