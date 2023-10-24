@@ -3,11 +3,13 @@
         font-size: 14px;
         font-family: 'Open Sans', sans-serif;
     }
-    .entry-title{
+
+    .entry-title {
         font-size: 30px !important;
         font-weight: bold !important;
 
     }
+
     .detail .entry-title {
         border: none;
         margin-top: 45px;
@@ -18,6 +20,7 @@
         margin: 25px 0 15px;
         position: relative;
     }
+
     .overviewline:before {
         content: "";
         position: absolute;
@@ -29,6 +32,7 @@
         display: block;
         width: 0;
     }
+
     .overviewline:after {
         content: "";
         position: absolute;
@@ -40,36 +44,42 @@
         display: block;
         width: 0;
     }
+
     .headlinesdate {
         background: #f5ce31;
         border-radius: 50%;
         padding: 10px 17px;
-        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-        -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     }
+
     .headlinesdate .headlinesdm, .news > .headlines .headlinesdate, .headlinesdate {
         float: left;
         font-family: 'Prata', serif;
     }
+
     .headlinesdate .headlinesyear {
         line-height: 3.5em;
         float: left;
         margin-left: 3px;
     }
+
     .detail .overview {
         font-style: italic;
         margin: 15px 0;
         text-align: justify;
     }
 
-    .col-md-6{
+    .col-md-6 {
         background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat;
 
     }
+
     .headlinesday {
         border-bottom: 1px solid #000;
     }
+
     .detail .maincontent {
         margin: 20px 0;
         text-align: justify;
@@ -83,7 +93,7 @@
     }
 
     .list-group-item {
-
+        margin-bottom: 0px !important;
         border: none !important;
         border-bottom: 2px #d9d9d9 solid !important;
         margin-bottom: 0;
@@ -91,6 +101,7 @@
         padding-right: 0;
         margin: 0 15px;
     }
+
     .list-group-item:before {
         font-family: Arial, Helvetica, sans-serif;
         color: #f5ce31;
@@ -105,22 +116,27 @@
     .list-group-item:last-child {
         border: none;
     }
-    .list-group-item a{
+
+    .list-group-item a {
 
     }
+
     .crossedbg {
         background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_cr_grey.png);
         height: 15px;
         margin: 0 15px;
 
     }
+
     body {
         font-family: 'Open Sans', sans-serif;
         background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat;
     }
+
     .list_news .headlines {
         background: #fff;
     }
+
     .headlines {
         background: #56bdbf;
         overflow: hidden;
@@ -177,6 +193,160 @@
     }
 
 
+    .comment-box img {
+        width: 50px;
+        height: 50px;
+    }
+    .comment-box .media-left {
+        padding-right: 10px;
+        width: 65px;
+    }
+    .comment-box .media-body p {
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+    .comment-box .media-body .media p {
+        margin-bottom: 0;
+    }
+    .comment-box .media-heading {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 7px 10px;
+        position: relative;
+        margin-bottom: -1px;
+    }
+    .comments-area.show-avatars .avatar {
+        border-radius: 0 !important;
+        position: relative !important;
+        top: 10px;
+    }
+
+    .comments-area.show-avatars .avatar {
+        border-radius: 0 !important;
+    }
+    .comment-box .media-heading:before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-width: 1px 0 0 1px;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 10px;
+        left: -6px;
+    }
+
+    .headlines1 {
+        background: #56bdbf;
+        overflow: hidden;
+        padding: 20px 30px;
+    }
+    .headlines1 ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .headlines1 ul > li {
+        overflow: hidden;
+        display: table;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .headlinesdate1 .headlinesdm1, .news > .headlines1 .headlinesdate1, .headlinesdate1 {
+        float: left;
+        font-family: 'Prata', serif;
+    }
+    .headlines1 .headlinesdate1 {
+        font-size: 0.8em;
+        width: 15%;
+        min-width: 55px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .headlinesdate1 .headlinesday1 {
+        border-bottom: 1px solid #fff;
+    }
+    .headlinesdate1 .headlinesday1, .news > .headlines1 .headlinesmonth1 {
+        line-height: 1.7em;
+    }
+    .headlinesdate1 .headlinesday1, .news > .headlines1 .headlinesmonth1 {
+        line-height: 1.7em;
+    }
+    .headlinesdate1 .headlinesyear1 {
+        line-height: 3.5em;
+        float: left;
+        margin-left: 3px;
+    }
+
+    .headlinesdate1 {
+        color: white;
+    }
+    .headlines1 ul > li > .headlinestitle1 {
+        display: table-cell;
+        vertical-align: middle;
+        width: 85%;
+    }
+    .news a {
+        color: #FFFFFF;
+    }
+    .headlines1 ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .headlines1 ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .headlines1 .headlinesdate1 {
+        font-size: 0.8em;
+        width: 15%;
+        min-width: 55px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .headlines1 .headlinesdate1 {
+        font-size: 0.8em;
+        width: 15%;
+        min-width: 55px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .xem {
+        color: #FFFFFF;
+        background: #62c6c8;
+        text-align: center;
+        height: 40px;
+        position: relative;
+
+    }
+    .xem a {
+        color: #FFFFFF;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+
+    }
+    .news > .newsall {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        background: #62c6c8;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .news a {
+        color: #fff;
+    }
+
+
 </style>
 <body>
 
@@ -197,8 +367,8 @@
         </div>
         <div class="col-md-6">
             <div class="row title">
-                <div class="col-md-10 col-xs-9" >
-                    <?php the_title( '<h1 class="entry-title" style="margin-top: 7px">', '</h1>' ); ?>
+                <div class="col-md-10 col-xs-9">
+                    <?php the_title('<h1 class="entry-title" style="margin-top: 7px">', '</h1>'); ?>
                     <?php twenty_twenty_one_post_thumbnail(); ?>
                 </div>
                 <div class="col-md-2 col-xs-3">
@@ -228,21 +398,21 @@
                     </div>
                 </div>
             </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="overviewline"></div>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="overviewline"></div>
+                </div>
+            </div>
             <div class="row maincontent">
                 <div class="col-md-12">
                     <?php
                     the_content();
                     wp_link_pages(
                         array(
-                            'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
-                            'after'    => '</nav>',
+                            'before' => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'twentytwentyone') . '">',
+                            'after' => '</nav>',
                             /* translators: %: Page number. */
-                            'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+                            'pagelink' => esc_html__('Page %', 'twentytwentyone'),
                         )
                     );
                     ?>
@@ -251,7 +421,51 @@
             </div>
 
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-3">
+
+            <div class="headlines1">
+                <ul>
+                    <?php
+                        $args = array(
+                            'post_type' => 'post',
+                            'posts_per_page' => 3
+                        );
+
+                        $query = new WP_Query($args);
+
+                        if ($query->have_posts()) :
+                            while ($query->have_posts()) : $query->the_post();
+                                ?>
+                                <li>
+                                    <div class="headlinesdate1 ">
+                                        <div class="headlinesdm1">
+                                            <div class="headlinesday1"><?php echo get_the_date('d'); ?></div>
+                                            <div class="headlinesmonth1"><?php echo get_the_date('m'); ?></div>
+                                        </div>
+                                        <div class="headlinesyear1"><?php echo get_the_date('y'); ?></div>
+                                    </div>
+                                    <div class="headlinestitle1">
+                                        <a style="color: white"
+                                           href="<?php the_permalink(); ?>"><p>
+                                                <?php the_title_attribute(); ?>
+                                            </p></a></div>
+                                </li>
+
+                            <?php
+                            endwhile;
+                            wp_reset_postdata();
+                        else :
+                            echo 'No posts found.';
+                        endif;
+
+                    ?>
+
+                </ul>
+            </div>
+
+            <div class="xem"><a class="newsall" href="<?php echo esc_url(get_home_url()); ?>">XEM TẤT CẢ TIN TỨC</a></div>
+
+        </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -276,10 +490,10 @@
                                 <li>
                                     <div class="headlinesdates">
                                         <div class="headlinesdms">
-                                            <div class="headlinesdays"><?php echo $post_date= get_the_date('d'); ?></div>
-                                            <div class="headlinesmonths"><?php echo $post_date= get_the_date('m'); ?></div>
+                                            <div class="headlinesdays"><?php echo $post_date = get_the_date('d'); ?></div>
+                                            <div class="headlinesmonths"><?php echo $post_date = get_the_date('m'); ?></div>
                                         </div>
-                                        <div class="headlinesyears"><?php echo $post_date= get_the_date('y'); ?></div>
+                                        <div class="headlinesyears"><?php echo $post_date = get_the_date('y'); ?></div>
                                     </div>
                                     <div class="headlinestitles">
                                         <a href="<?php the_permalink(); ?>"><?php echo $post_title; ?></a>
