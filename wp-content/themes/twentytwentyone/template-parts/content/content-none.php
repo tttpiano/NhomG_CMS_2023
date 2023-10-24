@@ -30,6 +30,7 @@
 
 <div class="container mt-0"  style="background-color: #f5efe1;">
     <div class="row justify-content-center" style="background-color: white">
+    
         <div class="d-flex justify-content-center">
             <?php if ( is_search() ) : ?>
             <div>
@@ -91,9 +92,11 @@
             </form>
         </div>
         <!--end of col-->
+        
     </div>
 
 </div>
+
 
 <!--<section class="no-results not-found">-->
 <!--	<header class="page-header alignwide">-->
