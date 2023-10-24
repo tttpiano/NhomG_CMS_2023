@@ -11,7 +11,7 @@
 
 ?>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="list_new_view">
@@ -44,6 +44,48 @@
                 </div>
             </div>
         </div>
+<!--        <div class="col-md-3">-->
+<!--            <div class="vc_column-inner ">-->
+<!--                <div class="wpb_wrapper">-->
+<!--                    <div class="wpb_text_column wpb_content_element ">-->
+<!--                        <div class="wpb_wrapper">-->
+<!--                            --><?php
+//                            if (is_home() || is_front_page()) { // Kiểm tra xem bạn đang ở trang chủ
+//                                if (is_user_logged_in()) {
+//                                    $comments = get_comments(array(
+//                                        'status' => 'approve', // Lấy các bình luận đã được duyệt
+//                                        'number' => 20, // -1 để lấy tất cả bình luận, hoặc bạn có thể đặt một giới hạn
+//                                    ));
+//
+//                                    echo '<h4>COMMENT</h4>
+//                                            <hr>
+//                                            <ul class="list_1">';
+//
+//                                    if (!empty($comments)) {
+//                                        foreach ($comments as $comment) {
+//                                            // Lấy ID của bài viết mà bình luận đã được đăng trên
+//                                            $post_id = $comment->comment_post_ID;
+//                                            // Lấy link đến bài viết
+//                                            $post_link = get_permalink($post_id);
+//                                            echo '<li><a href="' . esc_url($post_link) . '">' . esc_html($comment->comment_content) . '</a></li>';
+//                                        }
+//                                    } else {
+//                                        echo '<li>Không có bình luận nào.</li>';
+//                                    }
+//                                    echo '</ul>';
+//                                }
+//                            }
+//
+//                            ?>
+<!---->
+<!---->
+<!---->
+<!---->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
 </div>

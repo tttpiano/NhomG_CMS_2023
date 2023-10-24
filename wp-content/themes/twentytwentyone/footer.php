@@ -13,6 +13,7 @@
 
 ?>
 <!-- #main -->
+</div>
 </div><!-- #primary -->
 </div><!-- #content -->
 
