@@ -73,6 +73,9 @@
         display: list-item;
         text-align: -webkit-match-parent;
     }
+    body{
+        background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat;
+    }
 </style
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
